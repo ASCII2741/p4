@@ -1,0 +1,429 @@
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-89-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Oct 29 00:24:18 UTC 2021
+
+  System load:            0.03
+  Usage of /:             28.1% of 23.99GB
+  Memory usage:           3%
+  Swap usage:             0%
+  Processes:              149
+  Users logged in:        0
+  IPv4 address for ens18: 192.168.1.86
+  IPv6 address for ens18: 2405:6e00:10c7:e100:a099:c2ff:fe20:80d
+
+
+4 updates can be applied immediately.
+4 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Thu Oct 28 23:15:47 2021 from 192.168.1.242
+darklord150@inuxbox:~$ apt list --upgradable
+Listing... Done
+bind9-dnsutils/focal-updates,focal-security 1:9.16.1-0ubuntu2.9 amd64 [upgradable from: 1:9.16.1-0ubuntu2.8]
+bind9-host/focal-updates,focal-security 1:9.16.1-0ubuntu2.9 amd64 [upgradable from: 1:9.16.1-0ubuntu2.8]
+bind9-libs/focal-updates,focal-security 1:9.16.1-0ubuntu2.9 amd64 [upgradable from: 1:9.16.1-0ubuntu2.8]
+tzdata/focal-updates,focal-security 2021e-0ubuntu0.20.04 all [upgradable from: 2021a-2ubuntu0.20.04]
+darklord150@inuxbox:~$ sudo apt upgrade
+[sudo] password for darklord150: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  bind9-dnsutils bind9-host bind9-libs tzdata
+4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+4 standard security updates
+Need to get 1579 kB of archives.
+After this operation, 2048 B disk space will be freed.
+Do you want to continue? [Y/n] y
+Get:1 http://au.archive.ubuntu.com/ubuntu focal-updates/main amd64 tzdata all 2021e-0ubuntu0.20.04 [295 kB]
+Get:2 http://au.archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-dnsutils amd64 1:9.16.1-0ubuntu2.9 [134 kB]
+Get:3 http://au.archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-libs amd64 1:9.16.1-0ubuntu2.9 [1107 kB]
+Get:4 http://au.archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-host amd64 1:9.16.1-0ubuntu2.9 [43.0 kB]
+Fetched 1579 kB in 1s (1063 kB/s)
+Preconfiguring packages ...
+(Reading database ... 128979 files and directories currently installed.)
+Preparing to unpack .../tzdata_2021e-0ubuntu0.20.04_all.deb ...
+Unpacking tzdata (2021e-0ubuntu0.20.04) over (2021a-2ubuntu0.20.04) ...
+Preparing to unpack .../bind9-dnsutils_1%3a9.16.1-0ubuntu2.9_amd64.deb ...
+Unpacking bind9-dnsutils (1:9.16.1-0ubuntu2.9) over (1:9.16.1-0ubuntu2.8) ...
+Preparing to unpack .../bind9-libs_1%3a9.16.1-0ubuntu2.9_amd64.deb ...
+Unpacking bind9-libs:amd64 (1:9.16.1-0ubuntu2.9) over (1:9.16.1-0ubuntu2.8) ...
+Preparing to unpack .../bind9-host_1%3a9.16.1-0ubuntu2.9_amd64.deb ...
+Unpacking bind9-host (1:9.16.1-0ubuntu2.9) over (1:9.16.1-0ubuntu2.8) ...
+Setting up bind9-libs:amd64 (1:9.16.1-0ubuntu2.9) ...
+Setting up tzdata (2021e-0ubuntu0.20.04) ...
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Fri Oct 29 00:25:20 UTC 2021.
+Universal Time is now:  Fri Oct 29 00:25:20 UTC 2021.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up bind9-host (1:9.16.1-0ubuntu2.9) ...
+Setting up bind9-dnsutils (1:9.16.1-0ubuntu2.9) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+darklord150@inuxbox:~$ p4 info
+User name: darklord150
+Client name: inuxbox
+Client host: inuxbox
+Client root: /home/darklord150
+Client stream: //reportviewer/MAIN
+Current directory: /home/darklord150
+Peer address: 127.0.0.1:35506
+Client address: 127.0.0.1
+Server address: localhost:1666
+Server root: /opt/perforce/servers/thunderx/root
+Server date: 2021/10/29 00:27:12 +0000 UTC
+Server uptime: 00:03:48
+Server version: P4D/LINUX26X86_64/2021.1/2179737 (2021/09/02)
+Server encryption: encrypted
+Server cert expires: Oct 28 04:12:33 2023 GMT
+ServerID: thunderx
+Server services: commit-server
+Server license: none
+Case Handling: sensitive
+darklord150@inuxbox:~$ p4 depot -t stream ODM
+Perforce password (P4PASSWD) invalid or unset.
+Attempting login for user 'darklord150' against server 'ssl:1666'
+Enter password: 
+User darklord150 logged in.
+Depot ODM saved.
+darklord150@inuxbox:~$ p4 stream -t mainline //ODM/main
+Stream //ODM/main saved.
+darklord150@inuxbox:~$ p4 info
+User name: darklord150
+Client name: inuxbox
+Client host: inuxbox
+Client root: /home/darklord150
+Client stream: //reportviewer/MAIN
+Current directory: /home/darklord150
+Peer address: 127.0.0.1:35512
+Client address: 127.0.0.1
+Server address: localhost:1666
+Server root: /opt/perforce/servers/thunderx/root
+Server date: 2021/10/29 00:38:35 +0000 UTC
+Server uptime: 00:15:11
+Server version: P4D/LINUX26X86_64/2021.1/2179737 (2021/09/02)
+Server encryption: encrypted
+Server cert expires: Oct 28 04:12:33 2023 GMT
+ServerID: thunderx
+Server services: commit-server
+Server license: none
+Case Handling: sensitive
+darklord150@inuxbox:~$ cd /home/darklord/SourceCode
+-bash: cd: /home/darklord/SourceCode: No such file or directory
+darklord150@inuxbox:~$ cd /home/darklord150/SourceCode
+darklord150@inuxbox:~/SourceCode$ p4 add a.log
+//reportviewer/MAIN/SourceCode/a.log#1 - opened for add
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "test1 upload"
+Submitting change 34.
+Locking 1 files ...
+add //reportviewer/MAIN/SourceCode/a.log#1
+Change 34 submitted.
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM
+Stream '//ODM' is not the correct format of '//depotname/string'
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/main
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "test1 upload"
+No files to submit from the default changelist.
+darklord150@inuxbox:~/SourceCode$ p4 add a.log
+//reportviewer/MAIN/SourceCode/a.log - can't add existing file
+darklord150@inuxbox:~/SourceCode$ p4 add OneDriveMigration.exe.config
+//ODM/main/SourceCode/OneDriveMigration.exe.config#1 - opened for add
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "testUpload"
+Submitting change 35.
+Locking 1 files ...
+add //ODM/main/SourceCode/OneDriveMigration.exe.config#1
+Change 35 submitted.
+darklord150@inuxbox:~/SourceCode$ p4 add *
+//ODM/main/SourceCode/OneDriveMigration.exe#1 - opened for add
+//ODM/main/SourceCode/OneDriveMigration.exe.config - can't add existing file
+//ODM/main/SourceCode/OneDriveMigration.pdb#1 - opened for add
+//ODM/main/SourceCode/OneeDriveMigration.ps1#1 - opened for add
+//ODM/main/SourceCode/System.Management.Automation.dll#1 - opened for add
+//ODM/main/SourceCode/WpfAnimatedGif.dll#1 - opened for add
+//ODM/main/SourceCode/WpfAnimatedGif.pdb#1 - opened for add
+//ODM/main/SourceCode/WpfAnimatedGif.xml#1 - opened for add
+//reportviewer/MAIN/SourceCode/a.log - can't add existing file
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "finalupload"
+Submitting change 36.
+Locking 7 files ...
+add //ODM/main/SourceCode/OneDriveMigration.exe#1
+add //ODM/main/SourceCode/OneDriveMigration.pdb#1
+add //ODM/main/SourceCode/OneeDriveMigration.ps1#1
+add //ODM/main/SourceCode/System.Management.Automation.dll#1
+add //ODM/main/SourceCode/WpfAnimatedGif.dll#1
+add //ODM/main/SourceCode/WpfAnimatedGif.pdb#1
+add //ODM/main/SourceCode/WpfAnimatedGif.xml#1
+Change 36 submitted.
+darklord150@inuxbox:~/SourceCode$ p4 obliterate -y -T //reportviewer/MAIN/SourceCode/...
+//reportviewer/MAIN/SourceCode/a.log#1 - purged
+Deleted 1 client 1 revision record(s).
+darklord150@inuxbox:~/SourceCode$ p4 add *
+//ODM/main/SourceCode/OneDriveMigration.exe - can't add existing file
+//ODM/main/SourceCode/OneDriveMigration.exe.config - can't add existing file
+//ODM/main/SourceCode/OneDriveMigration.pdb - can't add existing file
+//ODM/main/SourceCode/OneeDriveMigration.ps1 - can't add existing file
+//ODM/main/SourceCode/System.Management.Automation.dll - can't add existing file
+//ODM/main/SourceCode/WpfAnimatedGif.dll - can't add existing file
+//ODM/main/SourceCode/WpfAnimatedGif.pdb - can't add existing file
+//ODM/main/SourceCode/WpfAnimatedGif.xml - can't add existing file
+//ODM/main/SourceCode/a.log#1 - opened for add
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "missingone"
+Submitting change 37.
+Locking 1 files ...
+add //ODM/main/SourceCode/a.log#1
+Change 37 submitted.
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ p4 stream -t development -P //ODM/main //ODM/dev1
+Stream //ODM/dev1 saved.
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM
+Stream '//ODM' is not the correct format of '//depotname/string'
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/main
+Client inuxbox not changed.
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/dev1
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 merge -S //ODM/dev1 -r
+//ODM/dev1/SourceCode/OneDriveMigration.exe#1 - delete from //ODM/main/SourceCode/OneDriveMigration.exe#1
+... must resolve branch from //ODM/main/SourceCode/OneDriveMigration.exe#1
+//ODM/dev1/SourceCode/OneDriveMigration.exe.config#1 - delete from //ODM/main/SourceCode/OneDriveMigration.exe.config#1
+... must resolve branch from //ODM/main/SourceCode/OneDriveMigration.exe.config#1
+//ODM/dev1/SourceCode/OneDriveMigration.pdb#1 - delete from //ODM/main/SourceCode/OneDriveMigration.pdb#1
+... must resolve branch from //ODM/main/SourceCode/OneDriveMigration.pdb#1
+//ODM/dev1/SourceCode/OneeDriveMigration.ps1#1 - delete from //ODM/main/SourceCode/OneeDriveMigration.ps1#1
+... must resolve branch from //ODM/main/SourceCode/OneeDriveMigration.ps1#1
+//ODM/dev1/SourceCode/System.Management.Automation.dll#1 - delete from //ODM/main/SourceCode/System.Management.Automation.dll#1
+... must resolve branch from //ODM/main/SourceCode/System.Management.Automation.dll#1
+//ODM/dev1/SourceCode/WpfAnimatedGif.dll#1 - delete from //ODM/main/SourceCode/WpfAnimatedGif.dll#1
+... must resolve branch from //ODM/main/SourceCode/WpfAnimatedGif.dll#1
+//ODM/dev1/SourceCode/WpfAnimatedGif.pdb#1 - delete from //ODM/main/SourceCode/WpfAnimatedGif.pdb#1
+... must resolve branch from //ODM/main/SourceCode/WpfAnimatedGif.pdb#1
+//ODM/dev1/SourceCode/WpfAnimatedGif.xml#1 - delete from //ODM/main/SourceCode/WpfAnimatedGif.xml#1
+... must resolve branch from //ODM/main/SourceCode/WpfAnimatedGif.xml#1
+//ODM/dev1/SourceCode/a.log#1 - delete from //ODM/main/SourceCode/a.log#1
+... must resolve branch from //ODM/main/SourceCode/a.log#1
+darklord150@inuxbox:~/SourceCode$ p4 resolve -am
+/home/darklord150/SourceCode/OneDriveMigration.exe - resolving branch from //ODM/main/SourceCode/OneDriveMigration.exe#1
+//inuxbox/SourceCode/OneDriveMigration.exe - branch from //ODM/main/SourceCode/OneDriveMigration.exe
+/home/darklord150/SourceCode/OneDriveMigration.exe.config - resolving branch from //ODM/main/SourceCode/OneDriveMigration.exe.config#1
+//inuxbox/SourceCode/OneDriveMigration.exe.config - branch from //ODM/main/SourceCode/OneDriveMigration.exe.config
+/home/darklord150/SourceCode/OneDriveMigration.pdb - resolving branch from //ODM/main/SourceCode/OneDriveMigration.pdb#1
+//inuxbox/SourceCode/OneDriveMigration.pdb - branch from //ODM/main/SourceCode/OneDriveMigration.pdb
+/home/darklord150/SourceCode/OneeDriveMigration.ps1 - resolving branch from //ODM/main/SourceCode/OneeDriveMigration.ps1#1
+//inuxbox/SourceCode/OneeDriveMigration.ps1 - branch from //ODM/main/SourceCode/OneeDriveMigration.ps1
+/home/darklord150/SourceCode/System.Management.Automation.dll - resolving branch from //ODM/main/SourceCode/System.Management.Automation.dll#1
+//inuxbox/SourceCode/System.Management.Automation.dll - branch from //ODM/main/SourceCode/System.Management.Automation.dll
+/home/darklord150/SourceCode/WpfAnimatedGif.dll - resolving branch from //ODM/main/SourceCode/WpfAnimatedGif.dll#1
+//inuxbox/SourceCode/WpfAnimatedGif.dll - branch from //ODM/main/SourceCode/WpfAnimatedGif.dll
+/home/darklord150/SourceCode/WpfAnimatedGif.pdb - resolving branch from //ODM/main/SourceCode/WpfAnimatedGif.pdb#1
+//inuxbox/SourceCode/WpfAnimatedGif.pdb - branch from //ODM/main/SourceCode/WpfAnimatedGif.pdb
+/home/darklord150/SourceCode/WpfAnimatedGif.xml - resolving branch from //ODM/main/SourceCode/WpfAnimatedGif.xml#1
+//inuxbox/SourceCode/WpfAnimatedGif.xml - branch from //ODM/main/SourceCode/WpfAnimatedGif.xml
+/home/darklord150/SourceCode/a.log - resolving branch from //ODM/main/SourceCode/a.log#1
+//inuxbox/SourceCode/a.log - branch from //ODM/main/SourceCode/a.log
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "merged mainline files to the development branch"
+Submitting change 39.
+Locking 9 files ...
+branch //ODM/dev1/SourceCode/OneDriveMigration.exe#1
+branch //ODM/dev1/SourceCode/OneDriveMigration.exe.config#1
+branch //ODM/dev1/SourceCode/OneDriveMigration.pdb#1
+branch //ODM/dev1/SourceCode/OneeDriveMigration.ps1#1
+branch //ODM/dev1/SourceCode/System.Management.Automation.dll#1
+branch //ODM/dev1/SourceCode/WpfAnimatedGif.dll#1
+branch //ODM/dev1/SourceCode/WpfAnimatedGif.pdb#1
+branch //ODM/dev1/SourceCode/WpfAnimatedGif.xml#1
+branch //ODM/dev1/SourceCode/a.log#1
+Change 39 submitted.
+darklord150@inuxbox:~/SourceCode$ p4 edit OneeDriveMigration.ps1
+//ODM/dev1/SourceCode/OneeDriveMigration.ps1#1 - opened for edit
+darklord150@inuxbox:~/SourceCode$ p4 submit
+Error in change specification.
+Error detected at line 1.
+Syntax error in 'nage'.
+Hit return to continue...                
+Specification not corrected -- giving up.
+Edited File /tmp/tmp.4935.140300700271616.120 kept due to errors.
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ 
+darklord150@inuxbox:~/SourceCode$ p4 edit OneeDriveMigration.ps1
+//ODM/dev1/SourceCode/OneeDriveMigration.ps1#1 - currently opened for edit
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "file change"
+Submitting change 40.
+Locking 1 files ...
+edit //ODM/dev1/SourceCode/OneeDriveMigration.ps1#2
+Change 40 submitted.
+darklord150@inuxbox:~/SourceCode$ p4 stream -t release -P //ODM/main //ODM/release1.0
+Stream //ODM/release1.0 saved.
+darklord150@inuxbox:~/SourceCode$ p4 info
+User name: darklord150
+Client name: inuxbox
+Client host: inuxbox
+Client root: /home/darklord150
+Client stream: //ODM/dev1
+Current directory: /home/darklord150/SourceCode
+Peer address: 127.0.0.1:35570
+Client address: 127.0.0.1
+Server address: localhost:1666
+Server root: /opt/perforce/servers/thunderx/root
+Server date: 2021/10/29 02:01:28 +0000 UTC
+Server uptime: 01:38:04
+Server version: P4D/LINUX26X86_64/2021.1/2179737 (2021/09/02)
+Server encryption: encrypted
+Server cert expires: Oct 28 04:12:33 2023 GMT
+ServerID: thunderx
+Server services: commit-server
+Server license: none
+Case Handling: sensitive
+darklord150@inuxbox:~/SourceCode$ p4 sync
+File(s) up-to-date.
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/main
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 sync
+//ODM/main/SourceCode/OneDriveMigration.exe#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe
+//ODM/main/SourceCode/OneDriveMigration.exe.config#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe.config
+//ODM/main/SourceCode/OneDriveMigration.pdb#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.pdb
+//ODM/main/SourceCode/OneeDriveMigration.ps1#1 - replacing /home/darklord150/SourceCode/OneeDriveMigration.ps1
+//ODM/main/SourceCode/System.Management.Automation.dll#1 - replacing /home/darklord150/SourceCode/System.Management.Automation.dll
+//ODM/main/SourceCode/WpfAnimatedGif.dll#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.dll
+//ODM/main/SourceCode/WpfAnimatedGif.pdb#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.pdb
+//ODM/main/SourceCode/WpfAnimatedGif.xml#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.xml
+//ODM/main/SourceCode/a.log#1 - replacing /home/darklord150/SourceCode/a.log
+darklord150@inuxbox:~/SourceCode$ p4 update
+File(s) up-to-date.
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/release1.0
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 copy -F -S //ODM/main -r
+Stream 'none' unknown - use 'stream' command to create it.
+darklord150@inuxbox:~/SourceCode$ p4 copy -S //ODM/main -r
+Stream '//ODM/main' has no parent, therefore (command not allowed).
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/main
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 copy -S //ODM/release1.0 -r
+Stream //ODM/release1.0 not configured to 'copy' or 'merge' changes in this direction.
+darklord150@inuxbox:~/SourceCode$ p4 copy -F -S //ODM/release1.0 -r
+No target file(s) in both client and branch view.
+darklord150@inuxbox:~/SourceCode$ p4 copy -F -S //ODM/release1.0
+No such file(s).
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/release1.0
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 sync
+//ODM/main/SourceCode/OneDriveMigration.exe#1 - deleted as /home/darklord150/SourceCode/OneDriveMigration.exe
+//ODM/main/SourceCode/OneDriveMigration.exe.config#1 - deleted as /home/darklord150/SourceCode/OneDriveMigration.exe.config
+//ODM/main/SourceCode/OneDriveMigration.pdb#1 - deleted as /home/darklord150/SourceCode/OneDriveMigration.pdb
+//ODM/main/SourceCode/OneeDriveMigration.ps1#1 - deleted as /home/darklord150/SourceCode/OneeDriveMigration.ps1
+//ODM/main/SourceCode/System.Management.Automation.dll#1 - deleted as /home/darklord150/SourceCode/System.Management.Automation.dll
+//ODM/main/SourceCode/WpfAnimatedGif.dll#1 - deleted as /home/darklord150/SourceCode/WpfAnimatedGif.dll
+//ODM/main/SourceCode/WpfAnimatedGif.pdb#1 - deleted as /home/darklord150/SourceCode/WpfAnimatedGif.pdb
+//ODM/main/SourceCode/WpfAnimatedGif.xml#1 - deleted as /home/darklord150/SourceCode/WpfAnimatedGif.xml
+//ODM/main/SourceCode/a.log#1 - deleted as /home/darklord150/SourceCode/a.log
+darklord150@inuxbox:~/SourceCode$ p4 copy -F -S //ODM/release1.0 -r
+//ODM/release1.0/SourceCode/OneDriveMigration.exe#1 - branch/sync from //ODM/main/SourceCode/OneDriveMigration.exe#1
+//ODM/release1.0/SourceCode/OneDriveMigration.exe.config#1 - branch/sync from //ODM/main/SourceCode/OneDriveMigration.exe.config#1
+//ODM/release1.0/SourceCode/OneDriveMigration.pdb#1 - branch/sync from //ODM/main/SourceCode/OneDriveMigration.pdb#1
+//ODM/release1.0/SourceCode/OneeDriveMigration.ps1#1 - branch/sync from //ODM/main/SourceCode/OneeDriveMigration.ps1#1
+//ODM/release1.0/SourceCode/System.Management.Automation.dll#1 - branch/sync from //ODM/main/SourceCode/System.Management.Automation.dll#1
+//ODM/release1.0/SourceCode/WpfAnimatedGif.dll#1 - branch/sync from //ODM/main/SourceCode/WpfAnimatedGif.dll#1
+//ODM/release1.0/SourceCode/WpfAnimatedGif.pdb#1 - branch/sync from //ODM/main/SourceCode/WpfAnimatedGif.pdb#1
+//ODM/release1.0/SourceCode/WpfAnimatedGif.xml#1 - branch/sync from //ODM/main/SourceCode/WpfAnimatedGif.xml#1
+//ODM/release1.0/SourceCode/a.log#1 - branch/sync from //ODM/main/SourceCode/a.log#1
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "data from main to release"
+Submitting change 42.
+Locking 9 files ...
+branch //ODM/release1.0/SourceCode/OneDriveMigration.exe#1
+branch //ODM/release1.0/SourceCode/OneDriveMigration.exe.config#1
+branch //ODM/release1.0/SourceCode/OneDriveMigration.pdb#1
+branch //ODM/release1.0/SourceCode/OneeDriveMigration.ps1#1
+branch //ODM/release1.0/SourceCode/System.Management.Automation.dll#1
+branch //ODM/release1.0/SourceCode/WpfAnimatedGif.dll#1
+branch //ODM/release1.0/SourceCode/WpfAnimatedGif.pdb#1
+branch //ODM/release1.0/SourceCode/WpfAnimatedGif.xml#1
+branch //ODM/release1.0/SourceCode/a.log#1
+Change 42 submitted.
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/dev1
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 sync
+//ODM/dev1/SourceCode/OneDriveMigration.exe#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe
+//ODM/dev1/SourceCode/OneDriveMigration.exe.config#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe.config
+//ODM/dev1/SourceCode/OneDriveMigration.pdb#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.pdb
+//ODM/dev1/SourceCode/OneeDriveMigration.ps1#2 - replacing /home/darklord150/SourceCode/OneeDriveMigration.ps1
+//ODM/dev1/SourceCode/System.Management.Automation.dll#1 - replacing /home/darklord150/SourceCode/System.Management.Automation.dll
+//ODM/dev1/SourceCode/WpfAnimatedGif.dll#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.dll
+//ODM/dev1/SourceCode/WpfAnimatedGif.pdb#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.pdb
+//ODM/dev1/SourceCode/WpfAnimatedGif.xml#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.xml
+//ODM/dev1/SourceCode/a.log#1 - replacing /home/darklord150/SourceCode/a.log
+darklord150@inuxbox:~/SourceCode$ p4 update
+File(s) up-to-date.
+darklord150@inuxbox:~/SourceCode$ p4 sync
+File(s) up-to-date.
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/main
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 update
+//ODM/main/SourceCode/OneDriveMigration.exe#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe
+//ODM/main/SourceCode/OneDriveMigration.exe.config#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe.config
+//ODM/main/SourceCode/OneDriveMigration.pdb#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.pdb
+//ODM/main/SourceCode/OneeDriveMigration.ps1#1 - can't replace modified file /home/darklord150/SourceCode/OneeDriveMigration.ps1
+//ODM/main/SourceCode/System.Management.Automation.dll#1 - replacing /home/darklord150/SourceCode/System.Management.Automation.dll
+//ODM/main/SourceCode/WpfAnimatedGif.dll#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.dll
+//ODM/main/SourceCode/WpfAnimatedGif.pdb#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.pdb
+//ODM/main/SourceCode/WpfAnimatedGif.xml#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.xml
+//ODM/main/SourceCode/a.log#1 - replacing /home/darklord150/SourceCode/a.log
+darklord150@inuxbox:~/SourceCode$ p4 submit
+No files to submit from the default changelist.
+darklord150@inuxbox:~/SourceCode$ p4 sync
+//ODM/main/SourceCode/OneeDriveMigration.ps1#1 - replacing /home/darklord150/SourceCode/OneeDriveMigration.ps1
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/dev1
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 sync
+//ODM/dev1/SourceCode/OneDriveMigration.exe#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe
+//ODM/dev1/SourceCode/OneDriveMigration.exe.config#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe.config
+//ODM/dev1/SourceCode/OneDriveMigration.pdb#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.pdb
+//ODM/dev1/SourceCode/OneeDriveMigration.ps1#2 - replacing /home/darklord150/SourceCode/OneeDriveMigration.ps1
+//ODM/dev1/SourceCode/System.Management.Automation.dll#1 - replacing /home/darklord150/SourceCode/System.Management.Automation.dll
+//ODM/dev1/SourceCode/WpfAnimatedGif.dll#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.dll
+//ODM/dev1/SourceCode/WpfAnimatedGif.pdb#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.pdb
+//ODM/dev1/SourceCode/WpfAnimatedGif.xml#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.xml
+//ODM/dev1/SourceCode/a.log#1 - replacing /home/darklord150/SourceCode/a.log
+darklord150@inuxbox:~/SourceCode$ p4 workspace -s -S //ODM/main
+Client inuxbox switched.
+darklord150@inuxbox:~/SourceCode$ p4 sync
+//ODM/main/SourceCode/OneDriveMigration.exe#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe
+//ODM/main/SourceCode/OneDriveMigration.exe.config#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.exe.config
+//ODM/main/SourceCode/OneDriveMigration.pdb#1 - replacing /home/darklord150/SourceCode/OneDriveMigration.pdb
+//ODM/main/SourceCode/OneeDriveMigration.ps1#1 - replacing /home/darklord150/SourceCode/OneeDriveMigration.ps1
+//ODM/main/SourceCode/System.Management.Automation.dll#1 - replacing /home/darklord150/SourceCode/System.Management.Automation.dll
+//ODM/main/SourceCode/WpfAnimatedGif.dll#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.dll
+//ODM/main/SourceCode/WpfAnimatedGif.pdb#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.pdb
+//ODM/main/SourceCode/WpfAnimatedGif.xml#1 - replacing /home/darklord150/SourceCode/WpfAnimatedGif.xml
+//ODM/main/SourceCode/a.log#1 - replacing /home/darklord150/SourceCode/a.log
+darklord150@inuxbox:~/SourceCode$ p4 copy -S //ODM/dev1
+//ODM/main/SourceCode/OneeDriveMigration.ps1#1 - sync/integrate from //ODM/dev1/SourceCode/OneeDriveMigration.ps1#2
+darklord150@inuxbox:~/SourceCode$ p4 submit -d "dev to mainline"
+Submitting change 43.
+Locking 1 files ...
+integrate //ODM/main/SourceCode/OneeDriveMigration.ps1#2
+Change 43 submitted.
